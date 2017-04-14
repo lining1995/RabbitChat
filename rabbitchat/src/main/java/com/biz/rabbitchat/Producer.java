@@ -20,15 +20,14 @@ public class Producer {
 		String message_send = "";
 		boolean exit = true;
 		Thread threadP;
-		//初始化，监听交换器上的消息。
-		producer.init();
 		
 		System.out.println("你是谁？");
 		name = scanner.nextLine();
 		// 发送名字
 		threadP = new ThreadP(name);
 		threadP.start();
-
+		//初始化，监听交换器上的消息。
+		producer.init();
 		while (exit) {
 
 			System.out.println("按1结束，输入其他继续聊天？");
